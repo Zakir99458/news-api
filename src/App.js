@@ -18,12 +18,18 @@ function App() {
 
   return (
     <div className="App">
-      <Row xs={1} md={2} className="g-4">
       {
-        news.map(nws => <News news={nws}></News>)
+        news.length === 0 ? 
+        <Spinner animation="border" variant="primary" />
+        
+        :
+         <Row xs={1} md={2} className="g-4">
+         {
+           news.map(nws => <News news={nws}></News>)
+         }
+         </Row>
       }
-    </Row>
-      
+
     </div>
   );
 }
